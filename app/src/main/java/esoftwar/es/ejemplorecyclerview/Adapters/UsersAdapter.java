@@ -19,7 +19,7 @@ import esoftwar.es.ejemplorecyclerview.models.User;
  * Created by FranPC on 18/07/2017.
  */
 
-public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> {
+public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder>{
 
     private List<User> userList;
 
@@ -30,6 +30,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
     public UsersAdapter(List<User> userList) {
         this.userList = userList;
     }
+
 
     /**
      * Called when RecyclerView needs a new {@link ViewHolder} of the given type to represent
@@ -46,7 +47,8 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).
                 inflate( R.layout.users_item_recyclerview, parent, false );
-        ViewHolder holder = new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
+        //
         return holder;
     }
 
